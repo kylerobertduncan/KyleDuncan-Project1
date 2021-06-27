@@ -15,7 +15,6 @@ body {
 
 img {
   max-width: 100%;
-  // display: inline-block;
 }
 
 .wrapper {
@@ -39,11 +38,9 @@ body.contact {
   background-color: $frenchBlue;
 }
 
-.roadTrips,
 .events,
 .gallery,
-aside,
-div.blog {
+.contact aside {
   padding: 100px 0;
 }
 
@@ -110,7 +107,7 @@ a {
   color: $frenchBlue;
   background-color: $brightAqua;
   margin-top: 30px;
-  padding: 15px 30px;
+  padding: 10px 20px;
 }
 
 .shadowL {
@@ -248,6 +245,10 @@ footer {
 //   padding: 50px 0;
 // }
 
+.details {
+  padding: 25px 0;
+}
+
 .details > div {
   display: flex;
   flex-wrap: wrap;
@@ -291,6 +292,7 @@ footer {
 
 .roadTrips {
   text-align: center;
+  padding: 125px 0;
 }
 
 // RIVER IMG
@@ -298,6 +300,9 @@ footer {
 .riverImg {
   line-height: 0;
   padding: 0;
+  img {
+    min-width: 100%;
+  }
 }
 
 // EVENTS
@@ -324,70 +329,87 @@ footer {
 
 // // BLOG.HTML
 
-body.blog > div {
+.images {
   display: flex;
-  justify-content: space-between;
-  // position:relative;
+  justify-content: center;
+  align-items: baseline;
+  position: relative;
+  bottom: 100px;
+  z-index: 100;
+  div:first-child {
+    width: 455px;
+    margin-right: 30px;
+  }
+  div:last-child {
+    width: 985px;
+    position: relative;
+    bottom: 50px;
+  }
 }
 
-.blog aside {
-  min-width: 25%;
-  margin: 0 5%;
-  .aside {
-    background: $frenchBlue;
-    padding: 25px;
-    img {
-      transform: scale(1.25);
-      transform-origin: bottom right;
-    }
-    h5:nth-of-type(2) {
-      padding-top: 30px;
-    }
-    li {
-      position: relative;
-      padding-left: 20px;
-    }
-    li::before {
-      content: "\2022";
-      color: $brightAqua;
-      position: absolute;
-      left: 5px;
-    }
-  }
-} // TRY AND TIDY ASIDE TO BE MORE LIKE THE ARTICLE
+div.text {
+  display: flex;
+  justify-content: center;
+}
 
-// .subWrapper for .article and comments ??
-
-article {
+.text aside {
+  width: 385px;
+  margin-left: 100px;
   position: relative;
-  bottom: 200px;
-  .article {
+  top: -465px;
+}
+
+.asideText {
+  padding: 365px 30px 30px;
+  background: $frenchBlue;
+  h5:nth-of-type(2) {
+    padding-top: 30px;
+  }
+  li {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+  }
+  li::before {
+    content: "\2022";
+    color: $brightAqua;
+    position: absolute;
+    left: 5px;
+  }
+}
+
+.gapColumn {
+  width: 100px;
+}
+
+.subWrapper {
+  width: 985px;
+  article,
+  .comments {
+    position: relative;
+    top: -150px;
+    padding: 50px 100px 100px;
+  }
+  article {
     border-left: 3px solid $brightAqua;
     border-bottom: 3px solid $brightAqua;
-    padding: 50px 75px 100px;
-    p {
-      margin-bottom: 20px;
-    }
   }
 }
 
-.comments {
-  margin-top: -200px;
-  padding: 50px 75px 100px;
-  .commentBox {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 100px;
-    img {
-      width: 20%;
-      margin-right: 30px;
-    }
-    .bold {
-      font-weight: 700;
-      font-style: italic;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-    }
+.commentBox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  img {
+    max-height: 90px;
+    max-width: 90px;
+    margin-right: 30px;
+  }
+  .bold {
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
   }
 }
 
