@@ -242,6 +242,7 @@ body {
   font-family: "Walter Turncoat", cursive;
   margin: 0;
   padding: 0;
+  cursor: default;
 }
 
 .noOverflow {
@@ -337,6 +338,18 @@ a {
   background-color: #08FDED;
   margin-top: 30px;
   padding: 10px 20px;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #044779;
+  color: #F3FAFF;
+}
+
+i:hover,
+i:focus {
+  color: #08FDED;
 }
 
 .shadowL {
@@ -586,7 +599,7 @@ footer {
   bottom: 50px;
 }
 
-div.text {
+div.blogText {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -595,7 +608,7 @@ div.text {
           justify-content: center;
 }
 
-.text aside {
+.blogText aside {
   width: 385px;
   margin-left: 100px;
   position: relative;
@@ -705,7 +718,95 @@ body.contact > div {
 .sendMessage textarea {
   border-color: #F3FAFF;
 }
+.sendMessage button:hover,
+.sendMessage button:focus {
+  background-color: #F3FAFF;
+  color: #474BB5;
+}
 
 .contact .wrapper {
   padding-bottom: 100px;
+}
+
+@media (max-width: 1000px) {
+  h2 {
+    font-size: 6rem;
+  }
+
+  input,
+textarea {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .images {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .images div:first-child {
+    width: 90%;
+    margin: 50px;
+    position: relative;
+    bottom: 100px;
+  }
+  .images div:last-child {
+    width: 90%;
+    margin: 50px;
+    position: absolute;
+    bottom: -750px;
+  }
+
+  div.blogText {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  div.blogText aside {
+    margin: 0;
+    width: 80%;
+    position: relative;
+    top: -600px;
+  }
+  div.blogText .gapColumn {
+    display: none;
+  }
+  div.blogText .subWrapper {
+    width: 90%;
+  }
+  div.blogText .subWrapper article,
+div.blogText .subWrapper .comments {
+    top: -80px;
+    padding: 50px 50px 100px;
+  }
+
+  body.contact .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 0;
+  }
+  body.contact .wrapper aside {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-left: 50px;
+  }
+
+  .contact main {
+    margin: 50px;
+  }
+  .contact main .formBackground {
+    width: calc(100% + 100px);
+    left: -50px;
+  }
 }

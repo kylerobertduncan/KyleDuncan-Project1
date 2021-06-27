@@ -7,6 +7,7 @@ body {
   font-family: $walter;
   margin: 0;
   padding: 0;
+  cursor: default;
 }
 
 .noOverflow {
@@ -108,6 +109,18 @@ a {
   background-color: $brightAqua;
   margin-top: 30px;
   padding: 10px 20px;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  background-color: $darkishBlue;
+  color: $paleGrey;
+}
+
+i:hover,
+i:focus {
+  color: $brightAqua;
 }
 
 .shadowL {
@@ -347,12 +360,12 @@ footer {
   }
 }
 
-div.text {
+div.blogText {
   display: flex;
   justify-content: center;
 }
 
-.text aside {
+.blogText aside {
   width: 385px;
   margin-left: 100px;
   position: relative;
@@ -460,11 +473,15 @@ body.contact > div {
   textarea {
     border-color: $paleGrey;
   }
+  button:hover,
+  button:focus {
+  background-color: $paleGrey;
+  color: $frenchBlue;
+  }
 }
 
 .contact .wrapper {
   padding-bottom: 100px;
 }
 
-
-// better focus/active state for forms
+@import 'mediaQueries';

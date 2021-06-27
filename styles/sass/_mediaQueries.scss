@@ -1,0 +1,78 @@
+// tablet landscape
+@media (max-width: 1000px) {
+
+  // general
+    // h$ font size
+  h2 {
+    font-size: 6rem;
+  }
+  input,
+  textarea {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  // blog
+  .images {
+    flex-direction: column;
+    align-items: center;
+    div:first-child {
+      width: 90%;
+      margin: 50px;
+      position: relative;
+      bottom: 100px;
+    }
+    div:last-child {
+      width: 90%;
+      margin: 50px;
+      position: absolute;
+      bottom: -750px;
+    }
+  }
+  
+  div.blogText {
+    flex-direction: column;
+    align-items: center;
+    aside {
+      margin: 0;
+      width: 80%;
+      position: relative;
+      top: -600px; 
+    }
+    .gapColumn {
+      display: none;
+    }
+    .subWrapper {
+      width: 90%;
+      article,
+      .comments {
+        // position: static;
+        top: -80px;
+        padding: 50px 50px 100px;
+      }
+    }
+  }
+
+
+  //contact
+  body.contact .wrapper {
+    flex-direction: column;
+    padding-bottom: 0;
+    aside {
+      order: 1;
+      margin-left: 50px;
+    }
+  }
+  .contact main {
+    margin: 50px;
+    .formBackground {
+      width: calc(100% + 100px);
+      left: -50px;
+      // bottom: -50px;
+    }
+    .sendMessage {
+      // bottom: 0;
+    }
+  }
+    // less forms l-r padding
+}
