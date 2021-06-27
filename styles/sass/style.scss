@@ -1,0 +1,448 @@
+@import 'setup';
+@import 'palette';
+
+body {
+  font-size: 125%;
+  color: $paleGrey;
+  font-family: $walter;
+  margin: 0;
+  padding: 0;
+}
+
+.noOverflow {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  // display: inline-block;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+// GENERAL SECTION FORMATTING
+
+.shortDescriptions,
+.roadTrips,
+.events,
+body.blog,
+body.contact {
+  background-color: $deepTurquoise;
+}
+
+.details,
+.gallery {
+  background-color: $frenchBlue;
+}
+
+.roadTrips,
+.events,
+.gallery,
+aside,
+div.blog {
+  padding: 100px 0;
+}
+
+// TYPOGRPAHY
+
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 9rem;
+  margin-top: 30vh;
+  z-index: 10;
+  position: relative;
+}
+
+h2 {
+  font-size: 7.6rem;
+  margin-top: 10vh;
+}
+
+h3 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+h4 {
+  padding-top: 50px;
+  font-size: 2.5rem;
+  margin: 20px 0;
+}
+
+h5 {
+  font-size: 1.5rem;
+  margin: 20px 0 10px;
+}
+
+a, p { 
+  font-family: $roboto;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: inline-block;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// FEATURE DECORATION
+
+.button {
+  font-family: $walter;
+  display: inline-block;
+  color: $frenchBlue;
+  background-color: $brightAqua;
+  margin-top: 30px;
+  padding: 15px 30px;
+}
+
+.shadowL {
+  box-shadow: -15px 15px 0 $brightAqua;
+  transform: translateX(15px);
+}
+
+.shadowR {
+  box-shadow: 15px 15px 0 $brightAqua;
+  transform: translateX(-15px);
+}
+
+// // UNIVERSAL SECTIONS
+
+// HEADER
+
+header {
+  height: 80vh;
+  background-image: url(../assets/home-header.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+header.blog {
+  height: 60vh;
+  background-image: url(../assets/blog-header.jpg);
+}
+
+header.contact {
+  height: 60vh;
+  background-image: url(../assets/contact-header.jpg);
+}
+
+nav {
+  padding-top: 50px;
+  li {
+    margin-right: 40px;
+    a {
+      font-weight: 700;
+      padding: 10px;
+    }
+  }
+}
+
+nav a:hover,
+nav a:focus {
+  border-bottom: 3px solid $brightAqua;
+}
+
+// index.html only
+header img {
+  max-width: 45%;
+  position: absolute;
+  right: 0;
+  bottom: -100px;
+}
+
+// FORMS
+
+input,
+textarea,
+button {
+  color: inherit;
+  letter-spacing: 2px;
+  background: inherit;
+  border: none;
+  padding: 15px;
+}
+
+input {
+  width: calc(50% - 15px);
+  border-bottom: 2px solid $brightAqua;
+  margin-bottom: 50px;
+}
+
+input[type="email"] {
+  margin-left: 20px;
+}
+
+textarea {
+  width: 100%;
+  border: 2px solid $brightAqua;
+}
+
+button {
+  width: 100%;
+}
+
+// FOOTER
+
+footer {
+  padding: 10px 0;
+  background-color: $darkishBlue;
+  text-align: center;
+}
+
+// // INDEX.HTML
+
+// DESCRIPTIONS
+
+.shortDescriptions {
+  padding: 20vh 0 100px;
+}
+
+.shortDescriptions > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shortDescriptions .box {
+  margin: 20px 10px;
+  width: calc(50% - 20px);
+  display: flex;
+  justify-content: space-between;
+  .icon {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $brightAqua;
+    font-size: 1.5rem;
+    color: $darkishBlue;
+  }
+  .text {
+    max-width: 85%;
+  }
+}
+
+// DETAILS
+
+// save for media queries?
+// .details {
+//   padding: 50px 0;
+// }
+
+.details > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.details .box {
+  margin: 20px;
+  width: 40%;
+  // save for media queries?
+  // width: calc(40% - 40px);
+}
+
+.imageL,
+.imageR {
+  position: relative;
+  img {
+    position: absolute;
+    transform: scale(1.5);
+  }
+}
+
+.imageL img {
+  right: 0;
+  bottom: 0;
+  transform-origin: 100% 100%;
+}
+
+.imageR {
+  order: 1;
+  img {
+    transform-origin: 0% 0%;
+  }
+}
+
+.alignR {
+  text-align: right;
+}
+
+// ROAD TRIPS
+
+.roadTrips {
+  text-align: center;
+}
+
+// RIVER IMG
+
+.riverImg {
+  line-height: 0;
+  padding: 0;
+}
+
+// EVENTS
+
+.events > div {
+    display: flex;
+    justify-content: space-between;
+    .box {
+      margin-left: 100px;
+      width: 70%;
+    }
+  }
+
+// GALLERY
+
+.gallery > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery > div > div {
+  width: 31%;
+}
+
+// // BLOG.HTML
+
+body.blog > div {
+  display: flex;
+  justify-content: space-between;
+  // position:relative;
+}
+
+.blog aside {
+  min-width: 25%;
+  margin: 0 5%;
+  .aside {
+    background: $frenchBlue;
+    padding: 25px;
+    img {
+      transform: scale(1.25);
+      transform-origin: bottom right;
+    }
+    h5:nth-of-type(2) {
+      padding-top: 30px;
+    }
+    li {
+      position: relative;
+      padding-left: 20px;
+    }
+    li::before {
+      content: "\2022";
+      color: $brightAqua;
+      position: absolute;
+      left: 5px;
+    }
+  }
+} // TRY AND TIDY ASIDE TO BE MORE LIKE THE ARTICLE
+
+// .subWrapper for .article and comments ??
+
+article {
+  position: relative;
+  bottom: 200px;
+  .article {
+    border-left: 3px solid $brightAqua;
+    border-bottom: 3px solid $brightAqua;
+    padding: 50px 75px 100px;
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.comments {
+  margin-top: -200px;
+  padding: 50px 75px 100px;
+  .commentBox {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    img {
+      width: 20%;
+      margin-right: 30px;
+    }
+    .bold {
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+// // CONTACT.HTML
+
+body.contact > div {
+  display: flex;
+}
+
+// ASIDE
+
+.contact aside {
+  min-width: 33%;
+}
+
+.socialIcons {
+  margin-bottom: 15px;
+  a {
+    font-size: 1.5rem;
+    padding-right: 20px;
+  }
+  + a {
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+
+// MESSAGE FORM
+
+.contact main {
+  position: relative;
+}
+
+.formBackground {
+  background: $darkishBlue;
+  box-shadow: 20px 20px 0 $brightAqua;
+  position: absolute;
+  height: calc(100% + 75px);
+  width: calc(100% + 150px);
+  bottom: 25px;
+  left: -75px;
+}
+
+.sendMessage {
+  position: relative;
+  bottom: 75px;
+  input,
+  textarea {
+    border-color: $paleGrey;
+  }
+}
+
+.contact .wrapper {
+  padding-bottom: 100px;
+}
+
+
+// better focus/active state for forms
