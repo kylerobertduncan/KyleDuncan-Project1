@@ -321,6 +321,8 @@ footer {
   line-height: 0;
   padding: 0;
   img {
+    object-fit: cover;
+    min-height: 200px;
     min-width: 100%;
   }
 }
@@ -341,10 +343,9 @@ footer {
 .gallery > div {
   display: flex;
   justify-content: space-between;
-}
-
-.gallery > div > div {
-  width: 31%;
+  div {
+    width: 30%;
+  }
 }
 
 // // BLOG.HTML
@@ -413,25 +414,29 @@ div.blogText {
   article {
     border-left: 3px solid $brightAqua;
     border-bottom: 3px solid $brightAqua;
+    p {
+      margin-bottom: 10px;
+    }
   }
 }
 
 .commentBox {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin-bottom: 75px;
   img {
     max-height: 90px;
     max-width: 90px;
     margin-right: 30px;
   }
-  .bold {
+}
+
+.bold {
     font-weight: 700;
     font-style: italic;
     letter-spacing: 1px;
     margin-bottom: 5px;
   }
-}
 
 // // CONTACT.HTML
 
