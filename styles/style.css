@@ -729,14 +729,63 @@ body.contact > div {
 }
 
 @media (max-width: 1000px) {
+  h1 {
+    font-size: 7.5rem;
+    margin-top: 10vh;
+  }
+
   h2 {
     font-size: 6rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+    padding-top: 0;
   }
 
   input,
 textarea {
     font-size: 1rem;
     letter-spacing: 1px;
+  }
+
+  header {
+    height: 60vh;
+  }
+  header img {
+    bottom: -50px;
+  }
+
+  .shortDescriptions {
+    padding: 100px 0;
+  }
+  .shortDescriptions .text {
+    width: calc(95% - 50px);
+  }
+
+  .details .box {
+    width: auto;
+    text-align: center;
+  }
+  .details .imageR {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+
+  .imageL,
+.imageR {
+    position: static;
+  }
+  .imageL img,
+.imageR img {
+    position: static;
+    -webkit-transform: none;
+            transform: none;
   }
 
   .images {

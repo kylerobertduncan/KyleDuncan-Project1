@@ -1,15 +1,61 @@
-// tablet landscape
+// tablet
 @media (max-width: 1000px) {
 
   // general
     // h$ font size
+  h1 {
+    font-size: 7.5rem;
+    margin-top: 10vh;
+  }
   h2 {
     font-size: 6rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.8rem;
+    padding-top: 0;
   }
   input,
   textarea {
     font-size: 1rem;
     letter-spacing: 1px;
+  }
+
+  // index
+  header {
+    height: 60vh;
+    img {
+      bottom: -50px;
+    }
+  }
+
+  .shortDescriptions {
+    padding: 100px 0;
+    .text {
+      width: calc(95% - 50px);
+      // maybe apply to main style ?
+    }
+  }
+
+  .details {
+    .box {
+      width: auto;
+      text-align: center;
+    }
+    .imageR {
+      order: 0;
+    }
+  }
+
+  .imageL,
+  .imageR {
+    position: static;
+    img {
+      position: static;
+      transform: none;
+    }
   }
 
   // blog
@@ -46,13 +92,11 @@
       width: 90%;
       article,
       .comments {
-        // position: static;
         top: -80px;
         padding: 50px 50px 100px;
       }
     }
   }
-
 
   //contact
   body.contact .wrapper {
@@ -68,11 +112,6 @@
     .formBackground {
       width: calc(100% + 100px);
       left: -50px;
-      // bottom: -50px;
-    }
-    .sendMessage {
-      // bottom: 0;
     }
   }
-    // less forms l-r padding
 }
