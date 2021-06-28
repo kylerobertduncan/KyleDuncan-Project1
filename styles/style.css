@@ -367,6 +367,7 @@ i:focus {
 }
 
 header {
+  min-height: 350px;
   height: 80vh;
   background-image: url(../assets/home-header.jpg);
   background-size: cover;
@@ -385,6 +386,12 @@ header.contact {
 
 nav {
   padding-top: 50px;
+}
+nav .hamburger {
+  font-size: 2rem;
+  color: #08FDED;
+  padding: 10px;
+  display: none;
 }
 nav li {
   margin-right: 40px;
@@ -857,5 +864,25 @@ div.blogText .subWrapper .comments {
   .contact main .formBackground {
     width: calc(100% + 100px);
     left: -50px;
+  }
+}
+@media (max-width: 700px) {
+  .wrapper {
+    width: 95%;
+  }
+
+  nav {
+    padding-top: 20px;
+    margin: 0 auto;
+  }
+  nav ul {
+    margin: 0 auto;
+    text-align: center;
+  }
+  nav ul li {
+    margin-right: 20px;
+  }
+  nav ul li:last-child {
+    margin-right: 0px;
   }
 }

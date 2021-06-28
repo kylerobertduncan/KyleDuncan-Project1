@@ -138,6 +138,7 @@ i:focus {
 // HEADER
 
 header {
+  min-height: 350px;
   height: 80vh;
   background-image: url(../assets/home-header.jpg);
   background-size: cover;
@@ -156,6 +157,12 @@ header.contact {
 
 nav {
   padding-top: 50px;
+  .hamburger {
+    font-size: 2rem;
+    color: $brightAqua;
+    padding: 10px;
+    display: none;
+  }
   li {
     margin-right: 40px;
     a {
