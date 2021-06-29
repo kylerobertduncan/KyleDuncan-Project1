@@ -80,7 +80,10 @@ h5 {
   margin: 20px 0 10px;
 }
 
-a, p { 
+a,
+p,
+input,
+textarea { 
   font-family: $roboto;
   font-size: 1rem;
   line-height: 1.5;

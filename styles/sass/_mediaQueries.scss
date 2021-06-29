@@ -19,7 +19,7 @@
   }
   input,
   textarea {
-    font-size: 1rem;
+    // font-size: 1rem;
     letter-spacing: 1px;
   }
 
@@ -130,9 +130,6 @@
   }
 }
 
-// ALL headers for landscape phone :(
-    // get rid of vh/add min-height
-
 // phone
 @media (max-width: 700px) {
 
@@ -226,42 +223,84 @@
   }
 
 // blog
-  .images {
-    div:first-child {
-      bottom: 0;
-    }
-    div:last-child {
-      bottom: -650px;
+  .blogMain {
+    padding: 0 15px;
+    aside {
+      min-width: auto;
+      max-width: auto;
+      .asideBackground {
+        width: calc(100% - 30px);
+        margin: 0 auto;
+        flex-direction: column;
+        .asideText {
+          width: 100%;
+          padding-top: 0;
+        }
+      }
     }
   }
 
-  div.blogText {
-    aside {
-      top: -500px;
+  .blogMain main {
+    article,
+    .comments {
+      margin: 0 auto;
+      padding: 50px 25px;
     }
-    .subWrapper {
-      article,
-      .comments {
-        top: -250px;
-        padding: 30px 30px 50px;
-      }
-      .comments {
-        text-align: center;
-        margin-bottom: -200px;
-      }
+    .postComment {
+      margin: 0 auto;
+      padding: 50px 0;
     }
   }
 
   .commentBox {
-    display: inline-block;
+    flex-direction: column;
     img {
-      margin-right: 0;
+      margin-bottom: 15px;
     }
-    .bold {
-      margin: 10px auto;
-      width: 65%;
+    div {
+      width: 100%;
+      .bold {
+        width: 75%;
+      }
     }
-  }
+}
+
+// .images {
+  //   div:first-child {
+  //     bottom: 0;
+  //   }
+  //   div:last-child {
+  //     bottom: -650px;
+  //   }
+  // }
+
+  // div.blogText {
+  //   aside {
+  //     top: -500px;
+  //   }
+  //   .subWrapper {
+  //     article,
+  //     .comments {
+  //       top: -250px;
+  //       padding: 30px 30px 50px;
+  //     }
+  //     .comments {
+  //       text-align: center;
+  //       margin-bottom: -200px;
+  //     }
+  //   }
+  // }
+
+  // .commentBox {
+  //   display: inline-block;
+  //   img {
+  //     margin-right: 0;
+  //   }
+  //   .bold {
+  //     margin: 10px auto;
+  //     width: 65%;
+  //   }
+  // }
 
 // contact
   .contact main {

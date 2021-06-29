@@ -311,7 +311,10 @@ h5 {
   margin: 20px 0 10px;
 }
 
-a, p {
+a,
+p,
+input,
+textarea {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
@@ -648,6 +651,7 @@ footer {
   padding: 50px 100px 100px;
   border-left: 3px solid #08FDED;
   border-bottom: 3px solid #08FDED;
+  position: relative;
 }
 .blogMain article h3,
 .blogMain article p {
@@ -655,6 +659,15 @@ footer {
 }
 .blogMain article p:first-of-type {
   margin-bottom: 30px;
+}
+.blogMain article::after {
+  content: "";
+  width: 15px;
+  height: 3px;
+  background: #08FDED;
+  position: absolute;
+  bottom: -3px;
+  right: -15px;
 }
 
 .comments,
@@ -763,7 +776,6 @@ body.contact > div {
 
   input,
 textarea {
-    font-size: 1rem;
     letter-spacing: 1px;
   }
 
@@ -988,35 +1000,50 @@ h2 {
     width: auto;
   }
 
-  .images div:first-child {
-    bottom: 0;
+  .blogMain {
+    padding: 0 15px;
   }
-  .images div:last-child {
-    bottom: -650px;
+  .blogMain aside {
+    min-width: auto;
+    max-width: auto;
+  }
+  .blogMain aside .asideBackground {
+    width: calc(100% - 30px);
+    margin: 0 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .blogMain aside .asideBackground .asideText {
+    width: 100%;
+    padding-top: 0;
   }
 
-  div.blogText aside {
-    top: -500px;
+  .blogMain main article,
+.blogMain main .comments {
+    margin: 0 auto;
+    padding: 50px 25px;
   }
-  div.blogText .subWrapper article,
-div.blogText .subWrapper .comments {
-    top: -250px;
-    padding: 30px 30px 50px;
-  }
-  div.blogText .subWrapper .comments {
-    text-align: center;
-    margin-bottom: -200px;
+  .blogMain main .postComment {
+    margin: 0 auto;
+    padding: 50px 0;
   }
 
   .commentBox {
-    display: inline-block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .commentBox img {
-    margin-right: 0;
+    margin-bottom: 15px;
   }
-  .commentBox .bold {
-    margin: 10px auto;
-    width: 65%;
+  .commentBox div {
+    width: 100%;
+  }
+  .commentBox div .bold {
+    width: 75%;
   }
 
   .contact main {
