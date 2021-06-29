@@ -663,6 +663,9 @@ div.blogText {
 .subWrapper article p {
   margin-bottom: 10px;
 }
+.subWrapper .comments {
+  padding: 50px;
+}
 
 .commentBox {
   display: -webkit-box;
@@ -741,7 +744,7 @@ body.contact > div {
   padding-bottom: 100px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1080px) {
   h1 {
     font-size: 7.5rem;
     margin-top: 10vh;
@@ -780,9 +783,18 @@ textarea {
     width: calc(95% - 50px);
   }
 
+  .details > div {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
   .details .box {
-    width: auto;
     text-align: center;
+    width: auto;
   }
   .details .imageR {
     -webkit-box-ordinal-group: 1;
@@ -801,6 +813,10 @@ textarea {
             transform: none;
   }
 
+  .events > div .box {
+    margin-left: 50px;
+  }
+
   .images {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -817,10 +833,10 @@ textarea {
     bottom: 100px;
   }
   .images div:last-child {
-    width: 90%;
-    margin: 50px;
+    margin: 50px 0;
     position: absolute;
-    bottom: -750px;
+    bottom: -900px;
+    right: 0;
   }
 
   div.blogText {
@@ -843,10 +859,11 @@ textarea {
   }
   div.blogText .subWrapper {
     width: 90%;
+    margin-left: auto;
   }
   div.blogText .subWrapper article,
 div.blogText .subWrapper .comments {
-    top: -80px;
+    top: 70px;
     padding: 50px 50px 100px;
   }
 
@@ -969,7 +986,7 @@ h2 {
   }
   .gallery > div div {
     margin: 0 auto 20px;
-    width: 90%;
+    width: auto;
   }
 
   .images div:first-child {
