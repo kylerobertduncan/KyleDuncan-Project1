@@ -24,7 +24,7 @@ img {
   margin: 0 auto;
 }
 
-// GENERAL SECTION FORMATTING
+// BASE SECTION FORMATTING
 
 .shortDescriptions,
 .roadTrips,
@@ -45,7 +45,7 @@ body.contact {
   padding: 100px 0;
 }
 
-// TYPOGRPAHY
+// BASE TYPOGRPAHY
 
 h1, h2, h3, h4, h5, p {
   margin: 0;
@@ -160,12 +160,6 @@ header.contact {
 
 nav {
   padding-top: 50px;
-  .hamburger {
-    font-size: 2rem;
-    color: $brightAqua;
-    padding: 10px;
-    display: none;
-  }
   li {
     margin-right: 40px;
     a {
@@ -201,7 +195,7 @@ button {
 }
 
 input {
-  width: calc(50% - 15px);
+  width: calc(50% - 14px);
   border-bottom: 2px solid $brightAqua;
   margin-bottom: 50px;
 }
@@ -233,57 +227,57 @@ footer {
 
 .shortDescriptions {
   padding: 20vh 0 100px;
-}
-
-.shortDescriptions > div {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.shortDescriptions .box {
-  margin: 20px 10px;
-  width: calc(50% - 20px);
-  display: flex;
-  justify-content: space-between;
-  .icon {
-    height: 50px;
-    width: 50px;
+  & > div {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: $brightAqua;
-    font-size: 1.5rem;
-    color: $darkishBlue;
+    flex-wrap: wrap;
   }
-  .text {
-    max-width: 85%;
+  .box {
+    margin: 20px 10px;
+    width: calc(50% - 20px);
+    display: flex;
+    justify-content: space-between;
+    .icon {
+      height: 50px;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: $brightAqua;
+      font-size: 1.5rem;
+      color: $darkishBlue;
+    }
+    .text {
+      max-width: 85%;
+    }
   }
 }
 
 // DETAILS
 
-// save for media queries?
-// .details {
-//   padding: 50px 0;
-// }
-
 .details {
   padding: 25px 0;
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .box {
+    margin: 20px;
+    width: 40%;
+  }
 }
 
-.details > div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+// .details > div {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+// }
 
-.details .box {
-  margin: 20px;
-  width: 40%;
-  // save for media queries?
-  // width: calc(40% - 40px);
-}
+// .details .box {
+//   margin: 20px;
+//   width: 40%;
+// }
 
 .imageL,
 .imageR {
@@ -353,7 +347,107 @@ footer {
 
 // // BLOG.HTML
 
-@import 'blogHTML';
+.blogMain {
+  display: flex;
+  justify-content: space-around;
+  aside {
+    position: relative;
+    min-width: calc(455px + 75px + 30px);
+    max-width: 300px;
+    padding: 75px;
+    .asideBackground {
+      display: flex;
+      flex-direction: column;
+      background-color: $frenchBlue;
+      padding: 100% 30px 30px;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 45px 105px 0 0;
+      }
+    }
+  }
+  main {
+    margin-right: 15px;
+    max-width: 985px;
+    & > div,
+    article,
+    section,
+    form {
+      position: relative;
+      top: -100px;
+    }
+    & > div {
+      line-height: 0;
+    }
+  }
+}
+
+.asideText {
+  h5:nth-of-type(2) {
+    padding-top: 20px;
+  }
+  li {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+  }
+  li::before {
+    content: "\2022";
+    color: $brightAqua;
+    position: absolute;
+    left: 5px;
+  }
+}
+
+.blogMain article {
+  padding: 50px 100px 100px;
+  border-left: 3px solid $brightAqua;
+  border-bottom: 3px solid $brightAqua;
+  position: relative;
+  h3,
+  p {
+    margin-bottom: 10px;
+  }
+  p:first-of-type {
+    margin-bottom: 30px;
+  }
+  &::after {
+    content: '';
+    width: 15px;
+    height: 3px;
+    background: $brightAqua;
+    position: absolute;
+    bottom: -3px;
+    right: -15px;
+  }
+}
+
+.comments,
+.postComment {
+  padding: 50px 100px 0;
+}
+
+.commentBox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 75px;
+  img {
+    max-height: 90px;
+    max-width: 90px;
+    margin-right: 25px;
+  }
+  .bold {
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+}
+.commentBox:last-of-type {
+  margin-bottom: 0;
+}
 
 // // CONTACT.HTML
 

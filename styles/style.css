@@ -390,12 +390,6 @@ header.contact {
 nav {
   padding-top: 50px;
 }
-nav .hamburger {
-  font-size: 2rem;
-  color: #08FDED;
-  padding: 10px;
-  display: none;
-}
 nav li {
   margin-right: 40px;
 }
@@ -427,7 +421,7 @@ button {
 }
 
 input {
-  width: calc(50% - 15px);
+  width: calc(50% - 14px);
   border-bottom: 2px solid #08FDED;
   margin-bottom: 50px;
 }
@@ -454,7 +448,6 @@ footer {
 .shortDescriptions {
   padding: 20vh 0 100px;
 }
-
 .shortDescriptions > div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -462,7 +455,6 @@ footer {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-
 .shortDescriptions .box {
   margin: 20px 10px;
   width: calc(50% - 20px);
@@ -497,7 +489,6 @@ footer {
 .details {
   padding: 25px 0;
 }
-
 .details > div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -508,7 +499,6 @@ footer {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-
 .details .box {
   margin: 20px;
   width: 40%;
@@ -865,6 +855,7 @@ textarea {
     padding: 15px;
     width: 50%;
   }
+
   .blogMain main > div,
 .blogMain main article,
 .blogMain main section,
@@ -994,9 +985,12 @@ h2 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .gallery > div div {
-    margin: 0 auto 20px;
+    margin: 0 10px 20px;
     width: auto;
   }
 
@@ -1020,6 +1014,9 @@ h2 {
     padding-top: 0;
   }
 
+  .blogMain main {
+    margin-right: 0;
+  }
   .blogMain main article,
 .blogMain main .comments {
     margin: 0 auto;
