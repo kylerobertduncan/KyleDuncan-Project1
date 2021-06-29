@@ -584,52 +584,53 @@ footer {
   width: 30%;
 }
 
-.images {
+.blogMain {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.blogMain aside {
   position: relative;
-  bottom: 100px;
-  z-index: 100;
+  min-width: calc(455px + 75px + 30px);
+  max-width: 300px;
+  padding: 75px;
 }
-.images div:first-child {
-  width: 455px;
-  margin-right: 30px;
-}
-.images div:last-child {
-  width: 985px;
-  position: relative;
-  bottom: 50px;
-}
-
-div.blogText {
+.blogMain aside .asideBackground {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #474BB5;
+  padding: 100% 30px 30px;
 }
-
-.blogText aside {
-  width: 385px;
-  margin-left: 100px;
+.blogMain aside .asideBackground img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 45px 105px 0 0;
+}
+.blogMain main {
+  margin-right: 15px;
+  max-width: 985px;
+}
+.blogMain main > div,
+.blogMain main article,
+.blogMain main section,
+.blogMain main form {
   position: relative;
-  top: -465px;
+  top: -100px;
+}
+.blogMain main > div {
+  line-height: 0;
 }
 
-.asideText {
-  padding: 365px 30px 30px;
-  background: #474BB5;
-}
 .asideText h5:nth-of-type(2) {
-  padding-top: 30px;
+  padding-top: 20px;
 }
 .asideText li {
   display: block;
@@ -643,28 +644,22 @@ div.blogText {
   left: 5px;
 }
 
-.gapColumn {
-  width: 100px;
-}
-
-.subWrapper {
-  width: 985px;
-}
-.subWrapper article,
-.subWrapper .comments {
-  position: relative;
-  top: -150px;
+.blogMain article {
   padding: 50px 100px 100px;
-}
-.subWrapper article {
   border-left: 3px solid #08FDED;
   border-bottom: 3px solid #08FDED;
 }
-.subWrapper article p {
+.blogMain article h3,
+.blogMain article p {
   margin-bottom: 10px;
 }
-.subWrapper .comments {
-  padding: 50px;
+.blogMain article p:first-of-type {
+  margin-bottom: 30px;
+}
+
+.comments,
+.postComment {
+  padding: 50px 100px 0;
 }
 
 .commentBox {
@@ -679,14 +674,17 @@ div.blogText {
 .commentBox img {
   max-height: 90px;
   max-width: 90px;
-  margin-right: 30px;
+  margin-right: 25px;
 }
-
-.bold {
+.commentBox .bold {
   font-weight: 700;
   font-style: italic;
   letter-spacing: 1px;
   margin-bottom: 5px;
+}
+
+.commentBox:last-of-type {
+  margin-bottom: 0;
 }
 
 body.contact > div {
@@ -817,54 +815,55 @@ textarea {
     margin-left: 50px;
   }
 
-  .images {
+  .blogMain {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    padding: 0 50px;
   }
-  .images div:first-child {
-    width: 90%;
-    margin: 50px;
+  .blogMain aside {
+    min-width: none;
+    max-width: none;
+    padding: 50px 0;
+  }
+  .blogMain aside .asideBackground {
+    width: auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    padding: 0;
+  }
+  .blogMain aside .asideBackground img {
     position: relative;
-    bottom: 100px;
+    top: -20px;
+    left: -20px;
+    padding: 0;
   }
-  .images div:last-child {
-    margin: 50px 0;
-    position: absolute;
-    bottom: -900px;
-    right: 0;
+  .blogMain aside .asideBackground .asideText {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    padding: 15px;
+    width: 50%;
+  }
+  .blogMain main > div,
+.blogMain main article,
+.blogMain main section,
+.blogMain main form {
+    position: static;
   }
 
-  div.blogText {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  div.blogText aside {
-    margin: 0;
-    width: 80%;
-    position: relative;
-    top: -600px;
-  }
-  div.blogText .gapColumn {
-    display: none;
-  }
-  div.blogText .subWrapper {
-    width: 90%;
-    margin-left: auto;
-  }
-  div.blogText .subWrapper article,
-div.blogText .subWrapper .comments {
-    top: 70px;
-    padding: 50px 50px 100px;
+  .blogMain article,
+.comments,
+.postComment {
+    padding: 50px 50px;
   }
 
   body.contact .wrapper {
