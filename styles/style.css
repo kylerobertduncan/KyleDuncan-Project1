@@ -483,7 +483,7 @@ footer {
   color: #044779;
 }
 .shortDescriptions .box .text {
-  max-width: 85%;
+  width: calc(95% - 50px);
 }
 
 .details {
@@ -502,6 +502,9 @@ footer {
 .details .box {
   margin: 20px;
   width: 40%;
+}
+.details .alignR {
+  text-align: right;
 }
 
 .imageL,
@@ -530,10 +533,6 @@ footer {
 .imageR img {
   -webkit-transform-origin: 0% 0%;
           transform-origin: 0% 0%;
-}
-
-.alignR {
-  text-align: right;
 }
 
 .roadTrips {
@@ -586,18 +585,11 @@ footer {
 }
 .blogMain aside {
   position: relative;
-  min-width: calc(455px + 75px + 30px);
   max-width: 300px;
+  min-width: calc(455px + 75px + 30px);
   padding: 75px;
 }
 .blogMain aside .asideBackground {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   background-color: #474BB5;
   padding: 100% 30px 30px;
 }
@@ -613,13 +605,17 @@ footer {
 }
 .blogMain main > div,
 .blogMain main article,
-.blogMain main section,
-.blogMain main form {
+.blogMain main .comments,
+.blogMain main .postComment {
   position: relative;
   top: -100px;
 }
 .blogMain main > div {
   line-height: 0;
+}
+.blogMain main .comments,
+.blogMain main .postComment {
+  padding: 50px 100px 0;
 }
 
 .asideText h5:nth-of-type(2) {
@@ -660,11 +656,6 @@ footer {
   right: -15px;
 }
 
-.comments,
-.postComment {
-  padding: 50px 100px 0;
-}
-
 .commentBox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -673,6 +664,9 @@ footer {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 75px;
+}
+.commentBox:last-of-type {
+  margin-bottom: 0;
 }
 .commentBox img {
   max-height: 90px;
@@ -683,31 +677,27 @@ footer {
   font-weight: 700;
   font-style: italic;
   letter-spacing: 1px;
-  margin-bottom: 5px;
-}
-
-.commentBox:last-of-type {
-  margin-bottom: 0;
+  margin-bottom: 7px;
 }
 
 body.contact > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-bottom: 100px;
 }
 
 .contact aside {
   min-width: 33%;
 }
-
-.socialIcons {
+.contact aside .socialIcons {
   margin-bottom: 15px;
 }
-.socialIcons a {
+.contact aside .socialIcons a {
   font-size: 1.5rem;
   padding-right: 20px;
 }
-.socialIcons + a {
+.contact aside .socialIcons + a {
   display: block;
   margin-bottom: 30px;
 }
@@ -715,8 +705,7 @@ body.contact > div {
 .contact main {
   position: relative;
 }
-
-.formBackground {
+.contact main .formBackground {
   background: #044779;
   -webkit-box-shadow: 20px 20px 0 #08FDED;
           box-shadow: 20px 20px 0 #08FDED;
@@ -726,23 +715,18 @@ body.contact > div {
   bottom: 25px;
   left: -75px;
 }
-
-.sendMessage {
+.contact main .sendMessage {
   position: relative;
   bottom: 75px;
 }
-.sendMessage input,
-.sendMessage textarea {
+.contact main .sendMessage input,
+.contact main .sendMessage textarea {
   border-color: #F3FAFF;
 }
-.sendMessage button:hover,
-.sendMessage button:focus {
+.contact main .sendMessage button:hover,
+.contact main .sendMessage button:focus {
   background-color: #F3FAFF;
   color: #474BB5;
-}
-
-.contact .wrapper {
-  padding-bottom: 100px;
 }
 
 @media (max-width: 1080px) {
@@ -779,10 +763,10 @@ textarea {
   .shortDescriptions {
     padding: 100px 0;
   }
-  .shortDescriptions .text {
-    width: calc(95% - 50px);
-  }
 
+  .details {
+    padding: 75px 0;
+  }
   .details > div {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
@@ -791,10 +775,19 @@ textarea {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-
   .details .box {
     text-align: center;
     width: auto;
+  }
+  .details .imageL,
+.details .imageR {
+    position: static;
+  }
+  .details .imageL img,
+.details .imageR img {
+    position: static;
+    -webkit-transform: none;
+            transform: none;
   }
   .details .imageR {
     -webkit-box-ordinal-group: 1;
@@ -802,15 +795,8 @@ textarea {
             order: 0;
   }
 
-  .imageL,
-.imageR {
-    position: static;
-  }
-  .imageL img,
-.imageR img {
-    position: static;
-    -webkit-transform: none;
-            transform: none;
+  .roadTrips {
+    padding: 100px 0;
   }
 
   .events > div .box {
@@ -834,13 +820,13 @@ textarea {
   }
   .blogMain aside .asideBackground {
     width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
     padding: 0;
   }
   .blogMain aside .asideBackground img {
@@ -852,31 +838,28 @@ textarea {
   .blogMain aside .asideBackground .asideText {
     -ms-flex-negative: 0;
         flex-shrink: 0;
-    padding: 15px;
+    padding: 10px 25px 25px;
     width: 50%;
   }
 
-  .blogMain main > div,
-.blogMain main article,
-.blogMain main section,
-.blogMain main form {
+  .blogMain main > div {
     position: static;
   }
-
-  .blogMain article,
-.comments,
-.postComment {
+  .blogMain main article,
+.blogMain main .comments,
+.blogMain main .postComment {
+    position: static;
     padding: 50px 50px;
   }
 
-  body.contact .wrapper {
+  body.contact > div {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     padding-bottom: 0;
   }
-  body.contact .wrapper aside {
+  body.contact > div aside {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -898,14 +881,12 @@ textarea {
 
   nav {
     padding-top: 20px;
-    margin: 0 auto;
   }
   nav ul {
-    margin: 0 auto;
-    text-align: center;
+    margin: 0 15px 0;
   }
   nav ul li {
-    margin-right: 20px;
+    margin-right: 15px;
   }
   nav ul li:last-child {
     margin-right: 0px;
@@ -913,12 +894,8 @@ textarea {
 
   h1,
 h2 {
-    margin-top: 15vh;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 4rem;
+    margin: 15vh 0 0 20px;
+    font-size: 4.5rem;
   }
 
   h2 {
@@ -930,7 +907,6 @@ h2 {
     margin-bottom: 25px;
     padding: 10px;
   }
-
   input[type=email] {
     margin-left: 0;
     margin-bottom: 35px;
@@ -995,14 +971,14 @@ h2 {
   }
 
   .blogMain {
-    padding: 0 15px;
+    padding: 0 25px;
   }
   .blogMain aside {
     min-width: auto;
     max-width: auto;
   }
   .blogMain aside .asideBackground {
-    width: calc(100% - 30px);
+    width: calc(100% - 50px);
     margin: 0 auto;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1017,13 +993,11 @@ h2 {
   .blogMain main {
     margin-right: 0;
   }
-  .blogMain main article,
-.blogMain main .comments {
-    margin: 0 auto;
+  .blogMain main article {
     padding: 50px 25px;
   }
-  .blogMain main .postComment {
-    margin: 0 auto;
+  .blogMain main .comments,
+.blogMain main .postComment {
     padding: 50px 0;
   }
 
@@ -1035,12 +1009,6 @@ h2 {
   }
   .commentBox img {
     margin-bottom: 15px;
-  }
-  .commentBox div {
-    width: 100%;
-  }
-  .commentBox div .bold {
-    width: 75%;
   }
 
   .contact main {

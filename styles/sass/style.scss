@@ -248,7 +248,7 @@ footer {
       color: $darkishBlue;
     }
     .text {
-      max-width: 85%;
+      width: calc(95% - 50px);
     }
   }
 }
@@ -266,18 +266,10 @@ footer {
     margin: 20px;
     width: 40%;
   }
+  .alignR {
+    text-align: right;
+  }
 }
-
-// .details > div {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-between;
-// }
-
-// .details .box {
-//   margin: 20px;
-//   width: 40%;
-// }
 
 .imageL,
 .imageR {
@@ -299,10 +291,6 @@ footer {
   img {
     transform-origin: 0% 0%;
   }
-}
-
-.alignR {
-  text-align: right;
 }
 
 // ROAD TRIPS
@@ -352,12 +340,11 @@ footer {
   justify-content: space-around;
   aside {
     position: relative;
-    min-width: calc(455px + 75px + 30px);
     max-width: 300px;
+    min-width: calc(455px + 75px + 30px);
+    // img + aside padding + asBkground padding
     padding: 75px;
     .asideBackground {
-      display: flex;
-      flex-direction: column;
       background-color: $frenchBlue;
       padding: 100% 30px 30px;
       img {
@@ -365,6 +352,7 @@ footer {
         top: 0;
         left: 0;
         padding: 45px 105px 0 0;
+        // 75px -/+ 30px
       }
     }
   }
@@ -373,13 +361,17 @@ footer {
     max-width: 985px;
     & > div,
     article,
-    section,
-    form {
+    .comments,
+    .postComment {
       position: relative;
       top: -100px;
     }
     & > div {
       line-height: 0;
+    }
+    .comments,
+    .postComment {
+      padding: 50px 100px 0;
     }
   }
 }
@@ -424,15 +416,13 @@ footer {
   }
 }
 
-.comments,
-.postComment {
-  padding: 50px 100px 0;
-}
-
 .commentBox {
   display: flex;
   justify-content: space-between;
   margin-bottom: 75px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
   img {
     max-height: 90px;
     max-width: 90px;
@@ -442,69 +432,62 @@ footer {
     font-weight: 700;
     font-style: italic;
     letter-spacing: 1px;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
   }
-}
-.commentBox:last-of-type {
-  margin-bottom: 0;
 }
 
 // // CONTACT.HTML
 
 body.contact > div {
   display: flex;
+  padding-bottom: 100px;
 }
 
 // ASIDE
 
 .contact aside {
   min-width: 33%;
-}
-
-.socialIcons {
-  margin-bottom: 15px;
-  a {
-    font-size: 1.5rem;
-    padding-right: 20px;
-  }
-  + a {
-    display: block;
-    margin-bottom: 30px;
+  .socialIcons {
+    margin-bottom: 15px;
+    a {
+      font-size: 1.5rem;
+      padding-right: 20px;
+    }
+    + a {
+      display: block;
+      margin-bottom: 30px;
+    }
   }
 }
 
 // MESSAGE FORM
 
-.contact main {
-  position: relative;
-}
-
-.formBackground {
-  background: $darkishBlue;
-  box-shadow: 20px 20px 0 $brightAqua;
-  position: absolute;
-  height: calc(100% + 75px);
-  width: calc(100% + 150px);
-  bottom: 25px;
-  left: -75px;
-}
-
-.sendMessage {
-  position: relative;
-  bottom: 75px;
-  input,
-  textarea {
-    border-color: $paleGrey;
+.contact {
+  main {
+    position: relative;
+    .formBackground {
+      background: $darkishBlue;
+      box-shadow: 20px 20px 0 $brightAqua;
+      position: absolute;
+      height: calc(100% + 75px);
+      width: calc(100% + 150px);
+      bottom: 25px;
+      left: -75px;
+    }
+    .sendMessage {
+      position: relative;
+      bottom: 75px;
+      input,
+      textarea {
+        border-color: $paleGrey;
+      }
+      button:hover,
+      button:focus {
+      background-color: $paleGrey;
+      color: $frenchBlue;
+      }
+    }
   }
-  button:hover,
-  button:focus {
-  background-color: $paleGrey;
-  color: $frenchBlue;
-  }
-}
-
-.contact .wrapper {
-  padding-bottom: 100px;
 }
 
 @import 'mediaQueries';
