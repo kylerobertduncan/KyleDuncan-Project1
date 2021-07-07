@@ -36,11 +36,13 @@ const todaysDate = function() {
   let date = `${today.getDate()}`;
   const year = today.getFullYear();
   // adding date suffix
-  if (date.endsWith(1)) {
+  if (date.endsWith('11') || date.endsWith('12') || date.endsWith('13')) {
+    date = `${date}th`;
+  } else if (date.endsWith('1')) {
     date = `${date}st`;
-  } else if (date.endsWith(2)) {
+  } else if (date.endsWith('2')) {
     date = `${date}nd`;
-  } else if (date.endsWith(3)) {
+  } else if (date.endsWith('3')) {
     date = `${date}rd`;
   } else {
     date = `${date}th`;
